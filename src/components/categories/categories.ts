@@ -14,28 +14,28 @@ const CATEGORIES_DATA: Category[] = [
     { 
         title: 'ARRANCADOR DE MOTOR', 
         subtitle: 'Potencia de ignición', 
-        img: '/arrancador.png', 
+        img: 'arrancador.png', 
         cta: 'Más información',
         description: 'Dispositivo electromecánico de alto rendimiento diseñado para convertir la energía eléctrica en fuerza mecánica de rotación. Esencial para iniciar el ciclo de combustión en motores diésel de carga pesada, garantizando un arranque fiable incluso en condiciones climáticas extremas.'
     },
     { 
         title: 'ALTERNADOR DE MOTOR', 
         subtitle: 'Energía constante', 
-        img: '/alternador.png', 
+        img: 'alternador.png', 
         cta: 'Más información',
         description: 'Generador de corriente trifásica con rectificación incorporada. Transforma la energía mecánica del motor en eléctrica para recargar la batería y alimentar los sistemas electrónicos del camión durante la marcha. Fabricado para soportar altas demandas de amperaje.'
     },
     { 
         title: 'PLATO DE EMBRAGUE', 
         subtitle: 'Transmisión precisa', 
-        img: '/plato.png', 
+        img: 'plato.png', 
         cta: 'Más información',
         description: 'Componente de presión crítica que actúa como interfase entre el motor y la caja de cambios. Su diafragma de acero tratado térmicamente asegura una presión uniforme sobre el disco, permitiendo cambios de marcha suaves y evitando el patinamiento bajo carga.'
     },
     { 
         title: 'DISCO DE EMBRAGUE', 
         subtitle: 'Fricción duradera', 
-        img: '/disco.png', 
+        img: 'disco.png', 
         cta: 'Más información',
         description: 'Elemento de fricción compuesto por materiales cerámicos o de fibra reforzada. Diseñado para absorber las vibraciones torsionales del motor y transmitir el torque a la transmisión con máxima eficiencia y resistencia al desgaste por temperatura.'
     }
