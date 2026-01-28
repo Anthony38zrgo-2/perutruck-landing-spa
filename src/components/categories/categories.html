@@ -1,13 +1,7 @@
 <section
   class="bg-gray-100 py-16 relative z-10"
-  x-data="{
-        categories: [
-            { title: 'ARRANCADOR DE MOTOR', subtitle: 'Potencia de ignición', img: '/arrancador.png', cta: 'VER CATÁLOGO' },
-            { title: 'ALTERNADOR DE MOTOR', subtitle: 'Energía constante', img: '/alternador.png', cta: 'VER CATÁLOGO' },
-            { title: 'PLATO DE EMBRAGUE', subtitle: 'Transmisión precisa', img: '/plato.png', cta: 'VER CATÁLOGO' },
-            { title: 'DISCO DE EMBRAGUE', subtitle: 'Fricción duradera', img: '/disco.png', cta: 'VER CATÁLOGO' }
-        ]
-    }"
+  x-data="categoriesComponent()"
+  @keydown.escape.window="closeModal()"
 >
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
@@ -20,9 +14,10 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <template x-for="cat in categories">
+      <template x-for="cat in categories" :key="cat.title">
         <div
           class="group relative bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden border-t-4 border-[#D32F2F] flex flex-col"
+          @click="openModal(cat)"
         >
           <div
             class="absolute -right-10 -top-10 w-32 h-32 bg-gray-50 rounded-full transition-transform group-hover:scale-150 z-0"
@@ -38,12 +33,10 @@
                 class="h-full w-auto max-w-full object-contain filter drop-shadow-lg transition-transform duration-500 group-hover:scale-110"
               />
             </div>
-
             <h3
               class="text-lg font-black text-gray-900 uppercase leading-tight mb-1"
               x-text="cat.title"
             ></h3>
-
             <p
               class="text-xs text-gray-500 font-medium tracking-wide mb-6"
               x-text="cat.subtitle"
@@ -65,7 +58,7 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M9 5l7 7-7 7"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
               </span>
@@ -75,4 +68,85 @@
       </template>
     </div>
   </div>
+
+  <template x-teleport="body">
+    <div
+      class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      x-show="modalOpen"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+    >
+      <div
+        class="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative overflow-hidden flex flex-col md:flex-row"
+        @click.outside="closeModal()"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200 transform"
+        x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+        x-transition:leave-end="opacity-0 scale-95 translate-y-4"
+      >
+        <button
+          @click="closeModal()"
+          class="absolute top-4 right-4 z-50 text-gray-400 hover:text-[#D32F2F] transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="w-full md:w-2/5 bg-gray-100 flex items-center justify-center p-8 border-r-0 md:border-r border-gray-200 relative"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"
+          ></div>
+          <img
+            :src="selectedCat.img"
+            :alt="selectedCat.title"
+            class="w-full h-auto max-h-48 md:max-h-64 object-contain drop-shadow-xl relative z-10"
+          />
+        </div>
+
+        <div class="w-full md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+          <div class="mb-4">
+            <h4
+              class="text-[#D32F2F] font-bold text-xs uppercase tracking-widest mb-1"
+              x-text="selectedCat.subtitle"
+            ></h4>
+            <h2
+              class="text-3xl font-extrabold text-gray-900 uppercase leading-none"
+              x-text="selectedCat.title"
+            ></h2>
+          </div>
+          <div class="h-1 w-16 bg-gray-300 mb-6"></div>
+          <p
+            class="text-gray-600 leading-relaxed text-sm md:text-base mb-8"
+            x-text="selectedCat.description"
+          ></p>
+          <button
+            @click="closeModal()"
+            class="self-start bg-[#D32F2F] text-white px-8 py-2 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-gray-900 transition-colors duration-300 shadow-md"
+          >
+            Entendido
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
 </section>
