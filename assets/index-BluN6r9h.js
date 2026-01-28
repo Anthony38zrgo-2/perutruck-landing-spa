@@ -8,7 +8,7 @@ ${r?'Expression: "'+r+`"
   <div class="container mx-auto px-4 flex justify-between items-center">\r
     <div class="flex items-center gap-3">\r
       <img\r
-        src="/logo.png"\r
+        src="logo.png"\r
         alt="Importaciones PeruTruck"\r
         class="h-12 md:h-16 w-auto mix-blend-screen object-contain"\r
       />\r
@@ -35,7 +35,7 @@ ${r?'Expression: "'+r+`"
 >\r
   <div class="relative w-full h-full">\r
     <img\r
-      src="/banner2.png"\r
+      src="banner2.png"\r
       alt="Banner Promocional Scania"\r
       class="w-full h-full object-cover object-center block"\r
     />\r
@@ -48,7 +48,7 @@ ${r?'Expression: "'+r+`"
       class="absolute inset-0 container mx-auto px-4 flex justify-end items-center"\r
     >\r
       <img\r
-        src="/logo-perutruck.png"\r
+        src="logo-perutruck.png"\r
         alt="Importaciones PeruTruck"\r
         class="w-24 sm:w-40 md:w-80 lg:w-[450px] drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)] opacity-90 mr-2 md:mr-10"\r
       />\r
@@ -217,7 +217,7 @@ ${r?'Expression: "'+r+`"
     </div>\r
   </template>\r
 </section>\r
-`,ho=[{title:"ARRANCADOR DE MOTOR",subtitle:"Potencia de ignición",img:"/arrancador.png",cta:"Más información",description:"Dispositivo electromecánico de alto rendimiento diseñado para convertir la energía eléctrica en fuerza mecánica de rotación. Esencial para iniciar el ciclo de combustión en motores diésel de carga pesada, garantizando un arranque fiable incluso en condiciones climáticas extremas."},{title:"ALTERNADOR DE MOTOR",subtitle:"Energía constante",img:"/alternador.png",cta:"Más información",description:"Generador de corriente trifásica con rectificación incorporada. Transforma la energía mecánica del motor en eléctrica para recargar la batería y alimentar los sistemas electrónicos del camión durante la marcha. Fabricado para soportar altas demandas de amperaje."},{title:"PLATO DE EMBRAGUE",subtitle:"Transmisión precisa",img:"/plato.png",cta:"Más información",description:"Componente de presión crítica que actúa como interfase entre el motor y la caja de cambios. Su diafragma de acero tratado térmicamente asegura una presión uniforme sobre el disco, permitiendo cambios de marcha suaves y evitando el patinamiento bajo carga."},{title:"DISCO DE EMBRAGUE",subtitle:"Fricción duradera",img:"/disco.png",cta:"Más información",description:"Elemento de fricción compuesto por materiales cerámicos o de fibra reforzada. Diseñado para absorber las vibraciones torsionales del motor y transmitir el torque a la transmisión con máxima eficiencia y resistencia al desgaste por temperatura."}],_o=()=>({modalOpen:!1,selectedCat:{},categories:ho,openModal(e){this.selectedCat=e,this.modalOpen=!0,document.body.style.overflow="hidden"},closeModal(){this.modalOpen=!1,document.body.style.overflow=""}});window.categoriesComponent=_o;const go=()=>po,xo=`<footer\r
+`,ho=[{title:"ARRANCADOR DE MOTOR",subtitle:"Potencia de ignición",img:"arrancador.png",cta:"Más información",description:"Dispositivo electromecánico de alto rendimiento diseñado para convertir la energía eléctrica en fuerza mecánica de rotación. Esencial para iniciar el ciclo de combustión en motores diésel de carga pesada, garantizando un arranque fiable incluso en condiciones climáticas extremas."},{title:"ALTERNADOR DE MOTOR",subtitle:"Energía constante",img:"alternador.png",cta:"Más información",description:"Generador de corriente trifásica con rectificación incorporada. Transforma la energía mecánica del motor en eléctrica para recargar la batería y alimentar los sistemas electrónicos del camión durante la marcha. Fabricado para soportar altas demandas de amperaje."},{title:"PLATO DE EMBRAGUE",subtitle:"Transmisión precisa",img:"plato.png",cta:"Más información",description:"Componente de presión crítica que actúa como interfase entre el motor y la caja de cambios. Su diafragma de acero tratado térmicamente asegura una presión uniforme sobre el disco, permitiendo cambios de marcha suaves y evitando el patinamiento bajo carga."},{title:"DISCO DE EMBRAGUE",subtitle:"Fricción duradera",img:"disco.png",cta:"Más información",description:"Elemento de fricción compuesto por materiales cerámicos o de fibra reforzada. Diseñado para absorber las vibraciones torsionales del motor y transmitir el torque a la transmisión con máxima eficiencia y resistencia al desgaste por temperatura."}],_o=()=>({modalOpen:!1,selectedCat:{},categories:ho,openModal(e){this.selectedCat=e,this.modalOpen=!0,document.body.style.overflow="hidden"},closeModal(){this.modalOpen=!1,document.body.style.overflow=""}});window.categoriesComponent=_o;const go=()=>po,xo=`<footer\r
   class="bg-[#333333] text-gray-300 py-12 border-t-[6px] border-gray-500 relative z-10"\r
 >\r
   <div class="container mx-auto px-4">\r
