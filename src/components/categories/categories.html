@@ -1,6 +1,6 @@
 <section
   class="bg-gray-100 py-16 relative z-10"
-  x-data="categoriesComponent()"
+  x-data="categoriesComponent"
   @keydown.escape.window="closeModal()"
 >
   <div class="container mx-auto px-4">
@@ -26,13 +26,11 @@
           <div
             class="p-6 flex flex-col items-center text-center h-full relative z-10"
           >
-            <div class="h-40 w-full flex items-center justify-center mb-4">
-              <img
-                :src="cat.img"
-                :alt="cat.title"
-                class="h-full w-auto max-w-full object-contain filter drop-shadow-lg transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
+            <div
+              class="h-24 w-24 text-[#D32F2F] mb-4 transition-transform duration-500 group-hover:scale-110"
+              x-html="cat.img"
+            ></div>
+
             <h3
               class="text-lg font-black text-gray-900 uppercase leading-tight mb-1"
               x-text="cat.title"
@@ -116,11 +114,10 @@
           <div
             class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"
           ></div>
-          <img
-            :src="selectedCat.img"
-            :alt="selectedCat.title"
-            class="w-full h-auto max-h-48 md:max-h-64 object-contain drop-shadow-xl relative z-10"
-          />
+          <div
+            class="w-32 h-32 text-[#D32F2F] drop-shadow-xl relative z-10"
+            x-html="selectedCat.img"
+          ></div>
         </div>
 
         <div class="w-full md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
